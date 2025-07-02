@@ -1,0 +1,19 @@
+// .devcontainer/devcontainer.json
+{
+  "name": "Ubuntu Codespace",
+  // Menggunakan image Ubuntu 22.04 resmi dari Docker Hub
+  "image": "ubuntu:22.04",
+  // Opsi: bisa juga pakai versi lain, misal ubuntu:20.04
+  "features": {
+    // Contoh menambahkan Node.js
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    }
+  },
+  // Perintah yang dijalankan saat kontainer dibuat
+  "postCreateCommand": "apt update && apt install -y build-essential git curl",
+  // Setting forwarded ports, workspace, dsb.
+  "forwardPorts": [3000],
+  "workspaceFolder": "/workspace",
+  "remoteUser": "root"
+}
